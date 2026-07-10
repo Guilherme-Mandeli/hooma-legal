@@ -75,7 +75,7 @@ class Hooma_Legal_CPT {
 			'show_ui'               => true,
 			'show_in_menu'          => true,
 			'menu_position'         => 25,
-			'menu_icon'             => 'dashicons-awards',
+			'menu_icon'             => 'dashicons-category',
 			'show_in_admin_bar'     => true,
 			'show_in_nav_menus'     => true,
 			'can_export'            => true,
