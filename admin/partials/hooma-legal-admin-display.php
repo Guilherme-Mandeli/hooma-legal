@@ -281,6 +281,22 @@ $settings = wp_parse_args( $options, $defaults );
 					</details>
 				<?php endif; ?>
 			</div>
+
+			<div class="hooma-legal-card" style="margin-top: 20px;">
+				<h3><?php esc_html_e( 'Shortcodes Disponibles', 'hooma-legal' ); ?></h3>
+				<p class="description" style="margin-bottom: 20px;">
+					<?php esc_html_e( 'Puedes utilizar los siguientes shortcodes en tus páginas o entradas para mostrar información legal de forma dinámica.', 'hooma-legal' ); ?>
+				</p>
+
+				<details class="hooma-legal-recommendation" open>
+					<summary><code>[hooma_legal_docs_nav]</code> — <?php esc_html_e( 'Navegación de Documentos Legales', 'hooma-legal' ); ?></summary>
+					<div class="hooma-legal-recommendation-content">
+						<p><?php esc_html_e( 'Muestra una navegación con todos los documentos legales publicados, ordenados según su orden de menú y título.', 'hooma-legal' ); ?></p>
+						<p><strong><?php esc_html_e( 'Uso:', 'hooma-legal' ); ?></strong></p>
+						<p><?php esc_html_e( 'Añade el shortcode <code>[hooma_legal_docs_nav]</code> en cualquier editor de texto o bloque de shortcode en tu sitio.', 'hooma-legal' ); ?></p>
+					</div>
+				</details>
+			</div>
 		</div>
 
 		<!-- TAB 5: INTEGRATIONS -->

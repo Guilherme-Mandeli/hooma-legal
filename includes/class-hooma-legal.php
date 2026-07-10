@@ -276,6 +276,8 @@ class Hooma_Legal {
 
 		$plugin_cf7_inline = new Hooma_Legal_CF7_Inline();
 		$this->loader->add_filter( 'wpcf7_form_elements', $plugin_cf7_inline, 'inject_inline_documents', 10, 1 );
+
+		$this->loader->add_action( 'init', $plugin_public, 'register_shortcodes' );
 	}
 
 	/**

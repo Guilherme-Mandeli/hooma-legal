@@ -75,4 +75,65 @@ class Hooma_Legal_Public {
 
 	}
 
+	/**
+	 * Register public-facing shortcodes.
+	 *
+	 * @since    1.0.0
+	 */
+	public function register_shortcodes() {
+		add_shortcode( 'hooma_legal_docs_nav', array( $this, 'hooma_legal_docs_nav_shortcode' ) );
+	}
+
+	/**
+	 * Shortcode: [hooma_legal_docs_nav]
+	 *
+	 * Muestra una navegación con todos los documentos legales.
+	 *
+	 * @since    1.0.0
+	 * @return   string HTML output.
+	 */
+	public function hooma_legal_docs_nav_shortcode() {
+
+		// Verificar que el CPT existe.
+		if ( ! post_type_exists( 'hooma_legal_doc' ) ) {
+			return '';
+		}
+
+		$documents = get_posts(
+			array(
+				'post_type'      => 'hooma_legal_doc',
+				'post_status'    => 'publish',
+				'posts_per_page' => -1,
+				'orderby'        => 'menu_order title',
+				'order'          => 'ASC',
+			)
+		);
+
+		if ( empty( $documents ) ) {
+			return '';
+		}
+
+		ob_start();
+		?>
+
+		<nav class="hooma-legal-doc-nav" aria-label="<?php esc_attr_e( 'Documentos legales', 'hooma-legal' ); ?>">
+			<ul class="hooma-legal-doc-list">
+				<?php foreach ( $documents as $document ) : ?>
+					<li class="hooma-legal-doc-item">
+						<a
+							class="hooma-legal-doc-link"
+							href="<?php echo esc_url( get_permalink( $document ) ); ?>"
+						>
+							<?php echo esc_html( get_the_title( $document ) ); ?>
+						</a>
+					</li>
+				<?php endforeach; ?>
+			</ul>
+		</nav>
+
+		<?php
+
+		return ob_get_clean();
+	}
+
 }
