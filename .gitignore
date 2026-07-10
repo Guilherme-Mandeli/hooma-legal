@@ -1,0 +1,31 @@
+# WordPress core / generic
+/wp-admin/
+/wp-includes/
+/wp-content/
+
+# Composer and node dependencies
+/vendor/
+/node_modules/
+npm-debug.log
+yarn-error.log
+
+# IDEs and editors
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Log files
+*.log
+
+# Local config/testing files
+phpunit.xml
+.env

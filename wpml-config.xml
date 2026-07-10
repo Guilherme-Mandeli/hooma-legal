@@ -1,0 +1,25 @@
+<wpml-config>
+    <custom-types>
+        <custom-type translate="1">hooma_legal_doc</custom-type>
+        <custom-type translate="1">hooma_legal_block</custom-type>
+    </custom-types>
+    <custom-fields>
+        <custom-field action="copy">_hooma_legal_version</custom-field>
+        <custom-field action="copy">_hooma_legal_revision_date</custom-field>
+        <custom-field action="copy">_hooma_legal_status</custom-field>
+    </custom-fields>
+    <admin-texts>
+        <key name="hooma_legal_settings">
+            <key name="company_name" />
+            <key name="brand_name" />
+            <key name="address" />
+            <key name="city" />
+            <key name="province" />
+            <key name="country" />
+            <key name="data_controller" />
+            <key name="dpo" />
+            <key name="jurisdiction" />
+            <key name="court" />
+        </key>
+    </admin-texts>
+</wpml-config>

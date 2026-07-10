@@ -1,0 +1,103 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+/* Inline document container inside the forms */
+.hooma-inline-doc-container {
+	max-height: 0;
+	opacity: 0;
+	overflow: hidden;
+	margin: 0;
+	border: 0 solid transparent;
+	border-radius: 6px;
+	background: #fbfbfc;
+	box-shadow: none;
+	font-family: inherit;
+	transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease-in-out, margin 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+/* Active open state of the inline document container */
+.hooma-inline-doc-container.hooma-is-open {
+	max-height: 320px; /* enough to cover header + content height */
+	opacity: 1;
+	margin: 15px 0;
+	border: 1px solid #dcdcde;
+	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Header of the inline viewer */
+.hooma-inline-doc-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 15px;
+	background: #f1f1f2;
+	border-bottom: 1px solid #dcdcde;
+}
+
+/* Title of the inline document */
+.hooma-inline-doc-title {
+	font-size: 13px;
+	font-weight: 600;
+	color: #1d2327;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+/* Close button for inline viewer */
+.hooma-inline-doc-close-btn {
+	background: none;
+	border: none;
+	font-size: 20px;
+	line-height: 1;
+	color: #646970;
+	cursor: pointer;
+	padding: 0 5px;
+	margin: 0;
+	transition: color 0.15s ease-in-out;
+}
+
+.hooma-inline-doc-close-btn:hover {
+	color: #d63638;
+}
+
+/* Inner content area of the document */
+.hooma-inline-doc-content {
+	max-height: 220px;
+	overflow-y: auto;
+	padding: 15px;
+	font-size: 13px;
+	line-height: 1.6;
+	color: #2c3338;
+	background: #ffffff;
+}
+
+/* Scrollbar customization for a sleek feel */
+.hooma-inline-doc-content::-webkit-scrollbar {
+	width: 8px;
+}
+.hooma-inline-doc-content::-webkit-scrollbar-track {
+	background: #f1f1f2;
+}
+.hooma-inline-doc-content::-webkit-scrollbar-thumb {
+	background: #c3c4c7;
+	border-radius: 4px;
+}
+.hooma-inline-doc-content::-webkit-scrollbar-thumb:hover {
+	background: #8c8f94;
+}
+
+/* Document formatting inside the inline content */
+.hooma-inline-doc-content p {
+	margin-top: 0;
+	margin-bottom: 12px;
+}
+.hooma-inline-doc-content p:last-child {
+	margin-bottom: 0;
+}
+.hooma-inline-doc-content ul, 
+.hooma-inline-doc-content ol {
+	margin: 0 0 12px 20px;
+	padding: 0;
+}
