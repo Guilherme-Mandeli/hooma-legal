@@ -293,7 +293,7 @@ $settings = wp_parse_args( $options, $defaults );
 					<div class="hooma-legal-recommendation-content">
 						<p><?php esc_html_e( 'Muestra una navegación con todos los documentos legales publicados, ordenados según su orden de menú y título.', 'hooma-legal' ); ?></p>
 						<p><strong><?php esc_html_e( 'Uso:', 'hooma-legal' ); ?></strong></p>
-						<p><?php esc_html_e( 'Añade el shortcode <code>[hooma_legal_docs_nav]</code> en cualquier editor de texto o bloque de shortcode en tu sitio.', 'hooma-legal' ); ?></p>
+						<p><?php printf( esc_html__( 'Añade el shortcode %s en cualquier editor de texto o bloque de shortcode en tu sitio.', 'hooma-legal' ), '<code>[hooma_legal_docs_nav]</code>' ); ?></p>
 					</div>
 				</details>
 			</div>
