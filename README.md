@@ -5,7 +5,7 @@ Plugin para la gestión integral, centralizada e inalterable de textos legales y
 ## Características principales
 
 - **Datos de empresa globales**: Centraliza los datos del titular de la web (razón social, NIF/CIF, dirección, contacto, etc.) y los inserta automáticamente en los documentos mediante marcadores dinámicos como `{{company_name}}` o `{{email}}`.
-- **Versionado automático inteligente**: Detecta cambios en las variables globales o en la configuración de cookies. Cuando un cambio afecta al contenido de uno o varios documentos legales, el plugin genera automáticamente una nueva versión de los documentos afectados.
+- **Versionado automático inteligente**: Detecta cambios en las variables globales. Cuando un cambio afecta al contenido de uno o varios documentos legales, el plugin genera automáticamente una nueva versión de los documentos afectados.
 - **Control de versiones manual**: Permite crear nuevas versiones de los documentos legales de forma manual cuando sea necesario, incluso si no se han producido cambios automáticos.
 - **Historial de versiones e instantáneas**: Guarda una copia estática de cada documento legal en formato HTML (con variables y bloques ya renderizados) cada vez que se crea una nueva versión.
 - **API de consentimiento de usuarios**: Registro de auditoría inalterable que asocia cada aceptación de usuario con una versión exacta del documento legal. Incluye soporte para campos personalizados (`extra_data`) en formato JSON.
