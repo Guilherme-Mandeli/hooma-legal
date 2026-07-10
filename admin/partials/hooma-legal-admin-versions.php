@@ -193,7 +193,7 @@ if ( ! empty( $version_ids_to_count ) ) {
 
 	<!-- TABLA DE VERSIONES -->
 	<div class="hooma-legal-card" style="padding: 0; border: 1px solid #dcdcde; border-radius: 6px;">
-		<table class="wp-list-table widefat fixed striped table-view-list" style="border: none; border-radius: 6px; box-shadow: none;">
+		<table class="wp-list-table widefat fixed striped table-view-list" style="border: none; border-radius: 6px; box-shadow: none; overflow: visible;">
 			<thead>
 				<tr>
 					<th scope="col" style="padding: 15px 20px; font-weight: 600; width: 35%;"><?php esc_html_e( 'Documento', 'hooma-legal' ); ?></th>
