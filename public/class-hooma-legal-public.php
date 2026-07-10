@@ -82,6 +82,7 @@ class Hooma_Legal_Public {
 	 */
 	public function register_shortcodes() {
 		add_shortcode( 'hooma_legal_docs_nav', array( $this, 'hooma_legal_docs_nav_shortcode' ) );
+		add_shortcode( 'hooma_legal', array( $this, 'hooma_legal_shortcode' ) );
 	}
 
 	/**
@@ -134,6 +135,62 @@ class Hooma_Legal_Public {
 		<?php
 
 		return ob_get_clean();
+	}
+
+	/**
+	 * Shortcode: [hooma_legal]
+	 *
+	 * Muestra el valor de una variable de configuración global.
+	 *
+	 * @since    1.0.0
+	 * @param    array    $atts    Shortcode attributes.
+	 * @return   string            Output value.
+	 */
+	public function hooma_legal_shortcode( $atts ) {
+		$atts = shortcode_atts(
+			array(
+				'get' => '',
+			),
+			$atts,
+			'hooma_legal'
+		);
+
+		$key = sanitize_key( $atts['get'] );
+
+		if ( empty( $key ) ) {
+			return '';
+		}
+
+		$options = get_option( 'hooma_legal_settings', array() );
+		$defaults = array(
+			'company_name'     => '',
+			'brand_name'       => '',
+			'vat_type'         => 'NIF/CIF',
+			'vat'              => '',
+			'address'          => '',
+			'postal_code'      => '',
+			'city'             => '',
+			'province'         => '',
+			'country'          => '',
+			'email'            => '',
+			'phone'            => '',
+			'website'          => get_home_url(),
+			'data_controller'  => '',
+			'dpo'              => '',
+			'jurisdiction'     => '',
+			'court'            => '',
+		);
+
+		$settings = wp_parse_args( $options, $defaults );
+
+		if ( isset( $settings[ $key ] ) ) {
+			if ( 'website' === $key ) {
+				return esc_url( $settings[ $key ] );
+			}
+			return esc_html( $settings[ $key ] );
+		}
+
+		return '';
 	}
 
 }

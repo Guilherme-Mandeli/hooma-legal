@@ -296,6 +296,21 @@ $settings = wp_parse_args( $options, $defaults );
 						<p><?php printf( esc_html__( 'Añade el shortcode %s en cualquier editor de texto o bloque de shortcode en tu sitio.', 'hooma-legal' ), '<code>[hooma_legal_docs_nav]</code>' ); ?></p>
 					</div>
 				</details>
+
+				<details class="hooma-legal-recommendation" open style="margin-top: 15px;">
+					<summary><code>[hooma_legal]</code> — <?php esc_html_e( 'Mostrar Variable de Ajustes Globales', 'hooma-legal' ); ?></summary>
+					<div class="hooma-legal-recommendation-content">
+						<p><?php esc_html_e( 'Muestra el valor de cualquiera de los campos de datos globales de la empresa.', 'hooma-legal' ); ?></p>
+						<p><strong><?php esc_html_e( 'Uso:', 'hooma-legal' ); ?></strong></p>
+						<p><?php printf( esc_html__( 'Usa el parámetro %1$s con la clave de la variable, por ejemplo: %2$s para mostrar la razón social, o %3$s para la dirección física.', 'hooma-legal' ), '<code>get</code>', '<code>[hooma_legal get="company_name"]</code>', '<code>[hooma_legal get="address"]</code>' ); ?></p>
+						<p><strong><?php esc_html_e( 'Variables disponibles:', 'hooma-legal' ); ?></strong></p>
+						<ul style="list-style-type:disc; margin-left:20px; font-size:13px; color:#50575e;">
+							<li><code>company_name</code>, <code>brand_name</code>, <code>vat_type</code>, <code>vat</code> (<?php esc_html_e( 'Datos de Empresa', 'hooma-legal' ); ?>)</li>
+							<li><code>address</code>, <code>postal_code</code>, <code>city</code>, <code>province</code>, <code>country</code>, <code>email</code>, <code>phone</code>, <code>website</code> (<?php esc_html_e( 'Contacto y Ubicación', 'hooma-legal' ); ?>)</li>
+							<li><code>data_controller</code>, <code>dpo</code>, <code>jurisdiction</code>, <code>court</code> (<?php esc_html_e( 'Protección y Jurisdicción', 'hooma-legal' ); ?>)</li>
+						</ul>
+					</div>
+				</details>
 			</div>
 		</div>
 
